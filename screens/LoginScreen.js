@@ -1,8 +1,8 @@
 import React from 'react';
 import { View } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 
-const Login = () => {
+const LoginScreen = ({ navigation }) => {
   return (
     <View
       style={{
@@ -11,8 +11,11 @@ const Login = () => {
       }}>
       <TextInput label="Email" mode="outlined" />
       <TextInput label="Password" mode="outlined" />
+      <Button onPress={() => navigation.navigate('HomeNavigator')}>
+        Press me
+      </Button>
     </View>
   );
 };
 
-export default Login;
+export default LoginScreen;

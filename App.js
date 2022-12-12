@@ -7,20 +7,12 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { SafeAreaView, useColorScheme } from 'react-native';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import { NavigationContainer } from '@react-navigation/native';
 
-import Login from './screens/Login';
+import LoginStackNavigator from './navigators/LoginStackNavigator';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -32,9 +24,11 @@ const App = () => {
 
   return (
     <PaperProvider>
-      <SafeAreaView style={backgroundStyle}>
-        <Login />
-      </SafeAreaView>
+      <NavigationContainer>
+        <SafeAreaView style={backgroundStyle}>
+          <LoginStackNavigator />
+        </SafeAreaView>
+      </NavigationContainer>
     </PaperProvider>
   );
 };
