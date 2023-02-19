@@ -33,7 +33,8 @@ const LoginScreen = ({ navigation }) => {
       <View style={{ width: '100%', marginTop: 24 }}>
         <Button
           onPress={() => navigation.navigate('HomeNavigator')}
-          mode="contained">
+          mode="contained"
+          style={{ width: '100%', marginTop: 24 }}>
           Log in
         </Button>
       </View>
